@@ -18,7 +18,6 @@ function addToListAfterClick() {
 
 function addToListAfterKeypress(event) {
   if (listItem() > 0 && event.keyCode === 13) {
-    // more than no letters
     createListElement();
   }
 }
@@ -31,7 +30,11 @@ function createListElement() {
   li.addEventListener("click", () => {
     li.classList.toggle("done");
   });
-  createDeleteButton();
+  createDeleteButton().addEventListener("click", () => {
+    li.remove();
+    deleteButton.remove();
+  });
+  // delete button on click li.remove()
   return li;
 }
 
