@@ -1,8 +1,3 @@
-// bug: you can only delete the last item,
-// when you click the first delete button, the last item goes away
-// the first item cannot be crossed out after another one is added
-// when you cross out the first item, the last item is crossed out instead
-
 let button = document.getElementById("enter");
 let input = document.getElementById("user-input");
 let ul = document.querySelector("ul");
@@ -27,6 +22,7 @@ function addToListAfterKeypress(event) {
 
 function createListElement() {
   li = document.createElement("li");
+  li.classList.add("text-capitalize");
   li.appendChild(document.createTextNode(input.value));
   ul.appendChild(li);
   input.value = "";
@@ -42,8 +38,10 @@ function createListElement() {
 function createDeleteButton() {
   deleteButton = document.createElement("button");
   deleteButton.innerText = "delete";
-  deleteButton.classList.add("btn", "btn-outline-danger", "delete");
-  ul.appendChild(deleteButton);
+  deleteButton.classList.add("btn", "btn-outline-danger", "delete", "btn-sml");
+  // deleteButton.style = {padding-left: "40px"}
+
+  li.appendChild(deleteButton);
   return deleteButton;
 }
 
