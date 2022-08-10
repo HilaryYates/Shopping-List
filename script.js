@@ -1,4 +1,7 @@
-// bug:
+// bug: you can only delete the last item,
+// when you click the first delete button, the last item goes away
+// the first item cannot be crossed out after another one is added
+// when you cross out the first item, the last item is crossed out instead
 
 let button = document.getElementById("enter");
 let input = document.getElementById("user-input");
@@ -34,14 +37,12 @@ function createListElement() {
     li.remove();
     deleteButton.remove();
   });
-  // delete button on click li.remove()
-  return li;
 }
 
 function createDeleteButton() {
-  // li = document.querySelectorAll("li");
   deleteButton = document.createElement("button");
   deleteButton.innerText = "delete";
+  deleteButton.classList.add("btn", "btn-outline-danger", "delete");
   ul.appendChild(deleteButton);
   return deleteButton;
 }

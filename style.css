@@ -1,17 +1,46 @@
-.coolTitle {
-  text-align: center;
-  font-family: "Oswald", Helvetica, sans-serif;
-  font-size: 40px;
-  transform: skewY(-10deg);
-  letter-spacing: 4px;
-  word-spacing: -8px;
-  color: tomato;
-  text-shadow: -1px -1px 0 firebrick, -2px -2px 0 firebrick,
-    -3px -3px 0 firebrick, -4px -4px 0 firebrick, -5px -5px 0 firebrick,
-    -6px -6px 0 firebrick, -7px -7px 0 firebrick, -8px -8px 0 firebrick,
-    -30px 20px 40px dimgrey;
-}
-
 .done {
   text-decoration: line-through;
 }
+
+.form-control:focus {
+  border-color: #2600ff27;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075),
+    0 0 8px rgba(102, 175, 233, 0.6);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075),
+    0 0 8px rgba(102, 175, 233, 0.6);
+}
+
+.centered {
+  position: fixed;
+  top: 25%;
+  left: 10%;
+}
+
+h1 {
+  position: fixed;
+  top: 10%;
+  left: 11%;
+}
+
+p {
+  position: fixed;
+  top: 20%;
+  left: 11%;
+}
+
+li {
+  font-size: 20px;
+}
+
+/* .delete {
+  position: fixed;
+  top: 55%;
+  left: 11%;
+}
+
+.list-item {
+  position: fixed;
+  top: 50%;
+  left: 11%;
+} */
