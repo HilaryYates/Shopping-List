@@ -24,9 +24,9 @@ function createListElement() {
   li.appendChild(document.createTextNode(input.value));
   ul.appendChild(li);
   input.value = "";
-  // li.addEventListener("click", () => {
-  //   li.classList.toggle("done");
-  // });
+  li.addEventListener("click", () => {
+    li.classList.toggle("done");
+  });
   createDeleteButton();
 }
 
@@ -34,15 +34,16 @@ function createDeleteButton() {
   let deleteButton = document.createElement("button");
   deleteButton.innerText = "delete";
   deleteButton.classList.add("btn", "btn-outline-danger", "delete", "btn-sml");
-  let li = document.querySelectorAll("li");
-  Array.from(li).forEach((item) => {
-    item.appendChild(deleteButton);
-    deleteButton.addEventListener("click", () => {
-      item.remove();
-      deleteButton.remove();
-    });
+  let items = document.querySelectorAll("li");
+  items.forEach((item) => item.append(deleteButton));
+  deleteButton.addEventListener("click", () => {
+    deleteButton.parentElement.remove();
   });
 }
+
+button.addEventListener("click", addToListAfterClick);
+
+input.addEventListener("keypress", addToListAfterKeypress);
 
 button.addEventListener("click", addToListAfterClick);
 
