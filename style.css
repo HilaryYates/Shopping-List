@@ -37,11 +37,11 @@ li {
 .shopping-list {
   position: fixed;
   top: 33%;
-  left: 25%;
+  left: 15%;
 }
 
 .delete {
-  margin-left: 1%;
+  margin-left: 0.5%;
   font-size: 12px;
   /* font-weight: bold; */
   border: 0px;
