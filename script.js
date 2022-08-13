@@ -15,9 +15,6 @@ function addToListAfterClick() {
 function addToListAfterKeypress(event) {
   if (listItem() > 0 && event.keyCode === 13) {
     createListElement();
-    // li.addEventListener("click", () => {
-    // li.classList.toggle("done");
-    // });
   }
 }
 
@@ -27,10 +24,9 @@ function createListElement() {
   li.appendChild(document.createTextNode(input.value));
   ul.appendChild(li);
   input.value = "";
-  li.addEventListener("click", () => {
-    console.log(li.innerText);
-    li.classList.toggle("done");
-  });
+  // li.addEventListener("click", () => {
+  //   li.classList.toggle("done");
+  // });
   createDeleteButton();
 }
 
@@ -38,12 +34,14 @@ function createDeleteButton() {
   let deleteButton = document.createElement("button");
   deleteButton.innerText = "delete";
   deleteButton.classList.add("btn", "btn-outline-danger", "delete", "btn-sml");
-  // li.appendChild(deleteButton);
-  // deleteButton.addEventListener("click", () => {
-  //   li.remove();
-  //   deleteButton.remove();
-  //   console.log(li.innerText);
-  // });
+  let li = document.querySelectorAll("li");
+  Array.from(li).forEach((item) => {
+    item.appendChild(deleteButton);
+    deleteButton.addEventListener("click", () => {
+      item.remove();
+      deleteButton.remove();
+    });
+  });
 }
 
 button.addEventListener("click", addToListAfterClick);
